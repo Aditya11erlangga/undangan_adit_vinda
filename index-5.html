@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Wedding of Adit & Vinda</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600&display=swap');
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#071b35;color:#fff;font-family:"DM Sans",sans-serif}
+section{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:48px 22px;position:relative;overflow:hidden}
+.wrap{width:min(560px,100%);text-align:center;position:relative;z-index:2}
+.cover{background:radial-gradient(circle at 50% 25%,#173f68 0,#0a2442 42%,#06162b 100%)}
+.cover:before,.cover:after{content:"";position:absolute;width:180px;height:180px;border:1px solid rgba(255,180,200,.28);border-radius:50%;filter:blur(.2px)}
+.cover:before{top:-75px;left:-65px}.cover:after{bottom:-80px;right:-65px}
+.kicker{letter-spacing:5px;font-size:12px;text-transform:uppercase;color:#f5c5d2}
+h1{font-family:"Playfair Display",serif;font-size:clamp(48px,13vw,82px);font-weight:500;margin:18px 0 8px}
+.names{font-size:14px;letter-spacing:2px;color:#f8e9ed}
+.date{font-family:"Playfair Display",serif;font-size:30px;margin:26px 0 8px;color:#fff}
+.small{font-size:13px;color:#cbd8e6}
+.btn{display:inline-block;margin-top:30px;padding:13px 22px;border:1px solid #f1b9ca;border-radius:999px;color:#fff;text-decoration:none;background:rgba(255,255,255,.06)}
+.heart{font-size:48px;margin:18px 0;animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.16)}}
+.fade{animation:fade 1.5s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.card{background:#fff;color:#10233d;border-radius:28px;padding:38px 26px;box-shadow:0 18px 50px rgba(0,0,0,.25)}
+.card h2{font-family:"Playfair Display",serif;font-size:35px;margin:0 0 16px}
+.card p{line-height:1.8;margin:7px 0}
+.parents{font-size:14px;margin-top:22px}
+.label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#b55d78}
+.event{margin-top:18px;padding:18px;border-radius:18px;background:#f7f1f4}
+.event strong{display:block;font-family:"Playfair Display",serif;font-size:23px;margin:4px 0}
+.event a{display:inline-block;margin-top:12px;color:#a63f63;font-weight:700;text-decoration:none}
+.count{font-size:42px;font-family:"Playfair Display",serif;margin:14px 0;color:#f3bdcc}
+.ornament{position:absolute;inset:auto 0 0;height:90px;background:linear-gradient(180deg,transparent,rgba(247,190,205,.08))}
+footer{padding:35px 20px 50px;text-align:center;background:#06162b;color:#aebdcd;font-size:12px}
+
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:24px 0 8px}
+.countdown div{background:#f7f1f4;border-radius:16px;padding:15px 5px}
+.countdown b{display:block;font-family:"Playfair Display",serif;font-size:30px;color:#a63f63}
+.countdown span{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#718096}
+@media(max-width:380px){.countdown{gap:5px}.countdown b{font-size:25px}}
+</style>
+</head>
+<body>
+<section class="cover">
+  <div class="wrap fade">
+    <div class="kicker">The Wedding Of</div>
+    <h1>Adit &amp; Vinda</h1>
+    <div class="names">M. Aditya Erlangga &nbsp;♥&nbsp; Laila Lavinda Vibrian</div>
+    <div class="heart">♡</div>
+    <div class="date">18 Oktober 2026</div>
+    <div class="small">08.00 WIB – selesai</div>
+    <a class="btn" href="#acara">Buka Undangan ↓</a>
+  </div>
+  <div class="ornament"></div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="card fade">
+      <div class="label">Dengan penuh kebahagiaan</div>
+      <h2>Menuju Hari Bahagia</h2>
+      <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir di hari bahagia kami.</p>
+      <div class="parents">
+        <p><b>M. Aditya Erlangga</b><br>Putra Pertama dari Bapak Purwanto &amp; Ibu Husna</p>
+        <p>♥</p>
+        <p><b>Laila Lavinda Vibrian</b><br>Putri Ketiga dari Bapak Mulyono (Teno) &amp; Ibu Lilik</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="wrap">
+    <div class="card fade">
+      <div class="label">Counting Down To Our Day</div>
+      <h2>Menuju Hari Bahagia</h2>
+      <div class="countdown">
+        <div><b id="days">0</b><span>Hari</span></div>
+        <div><b id="hours">0</b><span>Jam</span></div>
+        <div><b id="minutes">0</b><span>Menit</span></div>
+        <div><b id="seconds">0</b><span>Detik</span></div>
+      </div>
+      <p class="small">18 Oktober 2026 • 08.00 WIB</p>
+    </div>
+  </div>
+</section>
+<section id="acara">
+  <div class="wrap">
+    <div class="card fade">
+      <div class="label">Save The Date</div>
+      <h2>Akad &amp; Resepsi</h2>
+      <div class="event">
+        <strong>18 Oktober 2026</strong>
+        <p>08.00 WIB – selesai</p>
+        <p>Dsn. Kebonagung RT 07 RW 02<br>Jl. Sadewa, rumah Bpk. Mulyono (Teno)</p>
+        <a href="https://maps.app.goo.gl/HUYkVJdeDNtfMhdy8" target="_blank" rel="noopener">📍 Buka Google Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="card fade">
+      <div class="label">Terima kasih</div>
+      <h2>See You There</h2>
+      <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+      <div class="heart">♡</div>
+      <b>Adit &amp; Vinda</b>
+    </div>
+  </div>
+</section>
+
+<footer>18 • 10 • 2026 &nbsp; | &nbsp; Adit &amp; Vinda</footer>
+
+<script>
+const target = new Date("2026-10-18T08:00:00+07:00").getTime();
+function updateCountdown(){
+  let diff = target - Date.now();
+  if(diff < 0) diff = 0;
+  const d = Math.floor(diff/86400000);
+  const h = Math.floor((diff%86400000)/3600000);
+  const m = Math.floor((diff%3600000)/60000);
+  const s = Math.floor((diff%60000)/1000);
+  document.getElementById("days").textContent=d;
+  document.getElementById("hours").textContent=String(h).padStart(2,"0");
+  document.getElementById("minutes").textContent=String(m).padStart(2,"0");
+  document.getElementById("seconds").textContent=String(s).padStart(2,"0");
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+</script>
+</body>
+</html>
